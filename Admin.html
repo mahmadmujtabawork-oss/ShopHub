@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel — ShopHub</title>
+    <link rel="stylesheet" href="StyleSheet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+<body>
+
+    <!-- ADMIN LOGIN SECTION -->
+    <section id="adminLogin" class="admin-login">
+        <div class="login-card">
+            <div class="login-logo">
+                <i class="fa-solid fa-user-shield"></i>
+            </div>
+            <h2>Admin Login</h2>
+            <p class="muted">Access your admin dashboard</p>
+            <form id="adminLoginForm">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" id="adminUser" placeholder="Enter username" required />
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="adminPass" placeholder="Enter password" required />
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fa-solid fa-right-to-bracket"></i> Login
+                </button>
+            </form>
+            <a href="index.html" class="login-back">
+                <i class="fa-solid fa-arrow-left"></i> Back to Home
+            </a>
+        </div>
+    </section>
+
+    <!-- ADMIN DASHBOARD SECTION -->
+    <section id="adminDashboard" style="display: none;">
+        <!-- Admin Header -->
+        <header class="admin-header">
+            <div class="container admin-head-wrap">
+                <div class="admin-title">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    Admin Dashboard
+                    <small>ShopHub Management</small>
+                </div>
+                <div class="admin-actions">
+                    <a href="index.html" class="btn btn-light btn-sm">
+                        <i class="fa-solid fa-house"></i> View Site
+                    </a>
+                    <button class="btn btn-danger btn-sm" onclick="adminLogout()">
+                        <i class="fa-solid fa-right-from-bracket"></i> Logout
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Stats Section -->
+        <section class="section" style="padding-top: 40px;">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon blue">
+                            <i class="fa-solid fa-box"></i>
+                        </div>
+                        <div>
+                            <div class="stat-label">Total Products</div>
+                            <h3 id="statProducts">0</h3>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon green">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                        <div>
+                            <div class="stat-label">Cart Items</div>
+                            <h3 id="statOrders">0</h3>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon orange">
+                            <i class="fa-solid fa-indian-rupee-sign"></i>
+                        </div>
+                        <div>
+                            <div class="stat-label">Cart Value</div>
+                            <h3 id="statRevenue">Rs 0</h3>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon purple">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <div>
+                            <div class="stat-label">Wishlist Items</div>
+                            <h3 id="statWishlist">0</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products Management -->
+                <div class="admin-section-head">
+                    <h2><i class="fa-solid fa-boxes-stacked"></i> Products Management</h2>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <button class="btn btn-primary" onclick="openProductModal()">
+                            <i class="fa-solid fa-plus"></i> Add Product
+                        </button>
+                        <button class="btn btn-outline" onclick="exportData()">
+                            <i class="fa-solid fa-download"></i> Export Data
+                        </button>
+                        <label class="btn btn-outline" style="cursor: pointer;">
+                            <i class="fa-solid fa-upload"></i> Import Data
+                            <input type="file" accept=".json" onchange="importData(event)" style="display: none;" />
+                        </label>
+                    </div>
+                </div>
+                    <div class="table-wrap">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Image</th>
+                                    <th>Name</th>
+                                    <th>Category</th>
+                                    <th>Price</th>
+                                    <th>Stock</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminProductsBody">
+                                <!-- Products will be rendered here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- PRODUCT MODAL -->
+    <div class="modal" id="productModal">
+        <div class="modal-content modal-lg">
+            <button class="modal-close" onclick="closeModal('productModal')">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h2 id="modalTitle">Add New Product</h2>
+            <form id="productForm" onsubmit="saveProduct(event)">
+                <input type="hidden" id="productId" />
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Product Name *</label>
+                        <input type="text" id="pName" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Category *</label>
+                        <select id="pCategory" required>
+                            <option value="Electronics">Electronics</option>
+                            <option value="Fashion">Fashion</option>
+                            <option value="Home & Living">Home & Living</option>
+                            <option value="Beauty">Beauty</option>
+                            <option value="Gaming">Gaming</option>
+                            <option value="Sports">Sports</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Price (Rs) *</label>
+                        <input type="number" id="pPrice" min="0" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Old Price (Rs)</label>
+                        <input type="number" id="pOldPrice" min="0" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Stock *</label>
+                        <input type="number" id="pStock" min="0" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Rating (0-5)</label>
+                        <input type="number" id="pRating" min="0" max="5" step="0.1" value="4.5" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Image URL *</label>
+                    <input type="text" id="pImage" placeholder="https://... or images/1.jpg" required />
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="pDescription" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                        <input type="checkbox" id="pFeatured" style="width: auto;" />
+                        Featured Product
+                    </label>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-outline" onclick="closeModal('productModal')">
+                        Cancel
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fa-solid fa-check"></i> Save Product
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Orders Management Section -->
+    <div class="admin-section" style="margin-top: 40px;">
+        <div class="admin-section-head">
+            <h2><i class="fa-solid fa-clipboard-list"></i> Orders Management</h2>
+        </div>
+        <div class="table-wrap">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Order ID & Date</th>
+                        <th>Customer</th>
+                        <th>Items</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="adminOrdersBody">
+                    <!-- Orders yahan render hongi -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- TOAST -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="Script.js"></script>
+</body>
+</html>
