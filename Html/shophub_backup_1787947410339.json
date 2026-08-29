@@ -1,0 +1,263 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Wireless Headphones Pro",
+      "category": "Electronics",
+      "price": 4999,
+      "oldPrice": 6999,
+      "stock": 15,
+      "rating": 4.8,
+      "image": "Images/1.jpg",
+      "description": "Premium wireless headphones with active noise cancellation, 40-hour battery life, and crystal-clear sound quality.",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "name": "Smart Watch Series 7",
+      "category": "Sports",
+      "price": 5999,
+      "oldPrice": 6999,
+      "stock": 8,
+      "rating": 4.7,
+      "image": "Images/2.png",
+      "description": "Advanced smartwatch with health tracking, GPS, and a stunning always-on display.",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "name": "Leather Crossbody Bag",
+      "category": "Fashion",
+      "price": 2499,
+      "oldPrice": 3999,
+      "stock": 20,
+      "rating": 4.6,
+      "image": "Images/20.png",
+      "description": "Elegant genuine leather crossbody bag with adjustable strap. Spacious compartments for daily essentials.",
+      "featured": true
+    },
+    {
+      "id": 4,
+      "name": "Luxury Skincare Set",
+      "category": "Beauty",
+      "price": 3499,
+      "oldPrice": 4999,
+      "stock": 12,
+      "rating": 4.9,
+      "image": "Images/12.jpg",
+      "description": "Complete skincare routine featuring cleanser, toner, serum, and moisturizer for radiant skin.",
+      "featured": true
+    },
+    {
+      "id": 5,
+      "name": "Gaming Mouse RGB",
+      "category": "Gaming",
+      "price": 1999,
+      "oldPrice": 2999,
+      "stock": 25,
+      "rating": 4.5,
+      "image": "Images/18.jpg",
+      "description": "High-precision gaming mouse with customizable RGB lighting and programmable buttons.",
+      "featured": true
+    },
+    {
+      "id": 7,
+      "name": "Modern Table Lamp",
+      "category": "Home & Living",
+      "price": 2299,
+      "oldPrice": 3499,
+      "stock": 18,
+      "rating": 4.4,
+      "image": "Images/8.jpg",
+      "description": "Minimalist LED table lamp with adjustable brightness and warm light.",
+      "featured": true
+    },
+    {
+      "id": 8,
+      "name": "Bluetooth Speaker",
+      "category": "Electronics",
+      "price": 3299,
+      "oldPrice": 4999,
+      "stock": 14,
+      "rating": 4.6,
+      "image": "Images/3.jpg",
+      "description": "Portable waterproof Bluetooth speaker with 360-degree sound and 12-hour battery.",
+      "featured": true
+    },
+    {
+      "id": 9,
+      "name": "Designer Sunglasses",
+      "category": "Fashion",
+      "price": 1799,
+      "oldPrice": 2999,
+      "stock": 22,
+      "rating": 4.5,
+      "image": "Images/11.jpg",
+      "description": "UV-protected polarized sunglasses with lightweight frame and stylish design.",
+      "featured": true
+    },
+    {
+      "id": 10,
+      "name": "Coffee Mug ",
+      "category": "Home & Living",
+      "price": 349,
+      "oldPrice": 499,
+      "stock": 6,
+      "rating": 4.8,
+      "image": "Images/7.jpg",
+      "description": "Automatic coffee maker with built-in grinder and programmable brewing.",
+      "featured": true
+    },
+    {
+      "id": 11,
+      "name": "Running Shoes",
+      "category": "Sports",
+      "price": 3999,
+      "oldPrice": 5999,
+      "stock": 16,
+      "rating": 4.7,
+      "image": "Images/5.jfif",
+      "description": "Lightweight running shoes with responsive cushioning and breathable mesh.",
+      "featured": true
+    },
+    {
+      "id": 12,
+      "name": "Urban Edge Denim Jacket",
+      "category": "Fashion",
+      "price": 2799,
+      "oldPrice": 3999,
+      "stock": 10,
+      "rating": 4.6,
+      "image": "Images/4.jpg",
+      "description": "A timeless men's denim jacket designed with a modern fit and effortless street-style appeal. Durable, versatile, and easy to pair with any casual look, it adds confidence to every outfit.",
+      "featured": true
+    },
+    {
+      "id": 13,
+      "name": "Royal Comfort Towel",
+      "category": "Beauty",
+      "price": 499,
+      "oldPrice": 699,
+      "stock": 9,
+      "rating": 4.8,
+      "image": "Images/9.jfif",
+      "description": "Wrap yourself in pure luxury with this ultra-soft, highly absorbent towel, crafted for exceptional comfort. Its plush texture brings a touch of elegance to every bath.",
+      "featured": true
+    },
+    {
+      "id": 14,
+      "name": "Classic Luxe Leather Wallet",
+      "category": "Fashion",
+      "price": 99,
+      "oldPrice": 199,
+      "stock": 40,
+      "rating": 4.3,
+      "image": "Images/10.jpg",
+      "description": "Crafted with a sleek and refined design, this stylish wallet keeps your essentials organized with effortless elegance. Its durable finish and timeless appeal make it perfect for everyday use.",
+      "featured": true
+    },
+    {
+      "id": 15,
+      "name": "Scented Candle Set",
+      "category": "Home & Living",
+      "price": 1299,
+      "oldPrice": 1999,
+      "stock": 35,
+      "rating": 4.5,
+      "image": "Images/17.jpg",
+      "description": "Set of 3 hand-poured soy candles with natural essential oils.",
+      "featured": true
+    },
+    {
+      "id": 16,
+      "name": "Velvet Glow Lipstick",
+      "category": "Beauty",
+      "price": 299,
+      "oldPrice": 399,
+      "stock": 20,
+      "rating": 4.4,
+      "image": "Images/15.jpg",
+      "description": "A rich, silky lipstick that glides smoothly onto the lips for a bold and elegant finish. Its luxurious color adds confidence and beauty to every look.",
+      "featured": true
+    },
+    {
+      "id": 1787945928777,
+      "name": "Timeless Elegance Watch",
+      "category": "Fashion",
+      "price": 2999,
+      "oldPrice": 3499,
+      "stock": 12,
+      "rating": 4.5,
+      "image": "Images/16.jpg",
+      "description": "A beautifully crafted classic watch that combines refined style with everyday sophistication. Its elegant design and timeless appeal make it the perfect accessory for every occasion.",
+      "featured": false
+    },
+    {
+      "id": 1787946065201,
+      "name": "Midnight Essence Perfume",
+      "category": "Beauty",
+      "price": 5999,
+      "oldPrice": null,
+      "stock": 33,
+      "rating": 4.5,
+      "image": "Images/19.jpg",
+      "description": "A captivating fragrance that opens with a fresh, elegant touch and settles into a warm, unforgettable trail. Crafted for those who appreciate sophistication in every moment.",
+      "featured": false
+    }
+  ],
+  "orders": [
+    {
+      "id": "ORD-293812",
+      "date": "8/28/2026, 1:01:33 PM",
+      "customer": {
+        "name": "Ahmad Mujtaba",
+        "phone": "03026050532",
+        "address": "5 jbkamal pur sargodha road faisalabad"
+      },
+      "items": [
+        {
+          "id": 8,
+          "name": "Bluetooth Speaker",
+          "category": "Electronics",
+          "price": 3299,
+          "oldPrice": 4999,
+          "stock": 14,
+          "rating": 4.6,
+          "image": "Images/3.jpg",
+          "description": "Portable waterproof Bluetooth speaker with 360-degree sound and 12-hour battery.",
+          "featured": true,
+          "quantity": 1
+        },
+        {
+          "id": 7,
+          "name": "Modern Table Lamp",
+          "category": "Home & Living",
+          "price": 2299,
+          "oldPrice": 3499,
+          "stock": 18,
+          "rating": 4.4,
+          "image": "Images/8.jpg",
+          "description": "Minimalist LED table lamp with adjustable brightness and warm light.",
+          "featured": true,
+          "quantity": 1
+        },
+        {
+          "id": 12,
+          "name": "Urban Edge Denim Jacket",
+          "category": "Fashion",
+          "price": 2799,
+          "oldPrice": 3999,
+          "stock": 10,
+          "rating": 4.6,
+          "image": "Images/4.jpg",
+          "description": "A timeless men's denim jacket designed with a modern fit and effortless street-style appeal. Durable, versatile, and easy to pair with any casual look, it adds confidence to every outfit.",
+          "featured": true,
+          "quantity": 1
+        }
+      ],
+      "total": 8397,
+      "status": "Delivered"
+    }
+  ],
+  "exportDate": "2026-08-28T20:03:30.338Z"
+}
