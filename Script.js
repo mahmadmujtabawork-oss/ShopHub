@@ -688,60 +688,49 @@ function initNavbarScroll() {
 }
 
 function initPage() {
-    const path = window.location.pathname;
-    const page = path.split("/").pop().toLowerCase();
+  const path = window.location.pathname;
+  const page = path.split("/").pop().toLowerCase();
 
-    updateCartCount();
-    updateWishlistCount();
-    initMobileMenu();
-    initNavbarScroll();
+  updateCartCount();
+  updateWishlistCount();
+  initMobileMenu();
+  initNavbarScroll();
 
-    if (page === "index.html" || page === "") {
-        renderFeaturedProducts();
-    }
-    else if (page === "product.html" || page === "products.html") {
-        renderProductsPage();
-        ["productSearch", "productCategory", "productPrice", "productSort"].forEach(id => {
-            const el = document.getElementById(id);
-            if (el) {
-                el.addEventListener("input", renderProductsPage);
-                el.addEventListener("change", renderProductsPage);
-            }
-        });
-    }
-    else if (page === "product-details.html") {
-        renderProductDetails();
-    }
-    else if (page === "cart.html") {
-        renderCart();
-    }
-    else if (page === "wishlist.html") {
-        renderWishlist();
-    }
-    else if (page === "admin.html") {
-        checkAdminAuth();
-        const loginForm = document.getElementById("adminLoginForm");
-        if (loginForm) loginForm.addEventListener("submit", adminLogin);
-
-        // 👇 YE HAI STEP 3 KA CODE - YAHAN ADD KARNA HAI
-        const savedData = localStorage.getItem("shophub_autoload");
-        if (savedData) {
-            try {
-                const data = JSON.parse(savedData);
-                if (data.products && getProducts().length === 0) {
-                    saveProducts(data.products);
-                }
-            } catch (e) { }
-        }
-    }
-    else if (page === "contact.html") {
-        const form = document.getElementById("contactForm");
-        if (form) form.addEventListener("submit", (e) => {
-            e.preventDefault();
-            showToast("Message sent!", "success");
-            e.target.reset();
-        });
-    }
+  if (page === "index.html" || page === "") {
+    renderFeaturedProducts();
+  }
+  else if (page === "product.html" || page === "products.html") {
+    renderProductsPage();
+    ["productSearch", "productCategory", "productPrice", "productSort"].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.addEventListener("input", renderProductsPage);
+        el.addEventListener("change", renderProductsPage);
+      }
+    });
+  }
+  
+  // 👇 YE ADD KAREIN (Yahan se)
+  else if (page === "product-details.html") {
+    renderProductDetails();
+  }
+  // 👆 Yahan tak
+  
+  else if (page === "cart.html") {
+    renderCart();
+  }
+  else if (page === "wishlist.html") {
+    renderWishlist();
+  }
+  else if (page === "admin.html") {
+    checkAdminAuth();
+    const loginForm = document.getElementById("adminLoginForm");
+    if (loginForm) loginForm.addEventListener("submit", adminLogin);
+  }
+  else if (page === "contact.html") {
+    const form = document.getElementById("contactForm");
+    if (form) form.addEventListener("submit", handleContact);
+  }
 }
 
 document.addEventListener("DOMContentLoaded", initPage);
