@@ -4,10 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Products — ShopHub</title>
-    <link rel="stylesheet" href="StyleSheet.css" />
+    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 </head>
 <body>
+
+    <!-- NAVBAR -->
     <header class="navbar dark-nav">
         <div class="container nav-wrap">
             <a href="index.html" class="logo">
@@ -16,7 +18,7 @@
             </a>
             <nav class="nav-menu" id="navMenu">
                 <a href="index.html" class="nav-link">Home</a>
-                <a href="product.html" class="nav-link">Products</a>
+                <a href="product.html" class="nav-link active">Products</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="contact.html" class="nav-link">Contact</a>
             </nav>
@@ -42,12 +44,13 @@
             <a href="product.html" class="nav-link">Products</a>
             <a href="about.html" class="nav-link">About</a>
             <a href="contact.html" class="nav-link">Contact</a>
+            <a href="wishlist.html" class="nav-link"><i class="fa-solid fa-heart"></i> Wishlist</a>
             <a href="cart.html" class="nav-link"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
             <a href="admin.html" class="nav-link"><i class="fa-solid fa-user-shield"></i> Admin</a>
         </nav>
-
     </header>
 
+    <!-- PAGE HEADER -->
     <section class="page-header">
         <div class="container">
             <h1>Explore Our Products</h1>
@@ -55,52 +58,67 @@
         </div>
     </section>
 
+    <!-- PRODUCTS SECTION -->
     <section class="section">
         <div class="container">
+            
+            <!-- FILTERS -->
             <div class="filters">
                 <div class="filter-group">
                     <input type="text" id="productSearch" placeholder="Search products..." />
                 </div>
                 <div class="filter-group">
-                    <select id="categoryFilter">
-                        <option value="all">All Categories</option>
+                    <select id="productCategory">
+                        <option value="All">All Categories</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Fashion">Fashion</option>
+                        <option value="Beauty">Beauty</option>
+                        <option value="Gaming">Gaming</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Home & Living">Home & Living</option>
                     </select>
                 </div>
                 <div class="filter-group">
-                    <select id="priceFilter">
-                        <option value="all">All Prices</option>
-                        <option value="0-1000">Under ₹1,000</option>
-                        <option value="1000-5000">₹1,000 - ₹5,000</option>
-                        <option value="5000-15000">5,000 - ₹15,000</option>
-                        <option value="15000-999999">Above ₹15,000</option>
+                    <select id="productPrice">
+                        <option value="All">All Prices</option>
+                        <option value="under1000">Under Rs 1,000</option>
+                        <option value="1000-3000">Rs 1,000 - 3,000</option>
+                        <option value="3000-5000">Rs 3,000 - 5,000</option>
+                        <option value="over5000">Over Rs 5,000</option>
                     </select>
                 </div>
                 <div class="filter-group">
-                    <select id="sortFilter">
+                    <select id="productSort">
                         <option value="default">Sort: Default</option>
-                        <option value="price-asc">Price: Low to High</option>
-                        <option value="price-desc">Price: High to Low</option>
-                        <option value="name-asc">Name: A-Z</option>
-                        <option value="name-desc">Name: Z-A</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Highest Rated</option>
+                        <option value="name">Name: A to Z</option>
                     </select>
                 </div>
             </div>
+
+            <!-- PRODUCTS META -->
             <div class="products-meta">
-                <span id="productCount">0 products</span>
+                <span id="productsMeta">17 products</span>
             </div>
-            <div class="products-grid" id="productsGrid"></div>
-            <div class="empty-state hidden" id="emptyState">
-                <i class="fa-solid fa-box-open"></i>
-                <h3>No products found</h3>
-                <p>Try adjusting your filters or search term.</p>
+
+            <!-- PRODUCTS GRID -->
+            <div id="productsGrid" class="products-grid">
+                <div class="loader">Loading products...</div>
             </div>
+
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-col">
-                <a href="index.html" class="logo"><i class="fa-solid fa-bag-shopping"></i><span>Shop<span class="accent">Hub</span></span></a>
+                <a href="index.html" class="logo">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span>Shop<span class="accent">Hub</span></span>
+                </a>
                 <p>Your one-stop destination for quality products and amazing deals.</p>
                 <div class="socials">
                     <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -111,11 +129,21 @@
             </div>
             <div class="footer-col">
                 <h4>Quick Links</h4>
-                <ul><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
             </div>
             <div class="footer-col">
                 <h4>Customer Service</h4>
-                <ul><li><a href="#">FAQ</a></li><li><a href="#">Shipping Info</a></li><li><a href="#">Returns</a></li><li><a href="#">Privacy Policy</a></li></ul>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
             </div>
             <div class="footer-col">
                 <h4>Contact Info</h4>
@@ -126,10 +154,17 @@
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom"><div class="container"><p>&copy; 2026 ShopHub. All rights reserved.</p></div></div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 ShopHub. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
+    <!-- TOAST NOTIFICATIONS -->
     <div class="toast-container" id="toastContainer"></div>
-    <script src="Script.js"></script>
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
 </body>
 </html>
