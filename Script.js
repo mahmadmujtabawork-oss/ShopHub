@@ -474,7 +474,7 @@ function renderProductDetails() {
     const product = getProducts().find(p => p.id === productId);
     if (!product) return;
 
-    const container = document.getElementById("productDetailContent");
+    const container = document.getElementById("productDetailsContent");
     if (!container) return;
 
     const isWishlisted = getWishlist().includes(product.id);
